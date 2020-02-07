@@ -17,8 +17,14 @@ function Products(props) {
       <ul className="products-list">
         {props.products.map(product => {
           return (
-            <li className="product row">
-              <Product key={product.id} products={product} />
+            <li className="product row" key={product.id}>
+              <Product
+                key={product.id}
+                products={product}
+                count={props.count}
+                handleRemove={props.handleRemove}
+                handleAdd={props.handleAdd}
+              />
             </li>
           );
         })}

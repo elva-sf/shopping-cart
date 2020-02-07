@@ -3,6 +3,13 @@ import React from "react";
 function Product(props) {
   const { name, code, image, currency, price } = props.products;
 
+  function handleRemove() {
+    props.handleRemove();
+  }
+  function handleAdd(ev) {
+    props.handleAdd();
+  }
+
   return (
     <React.Fragment>
       <div className="col-product">
@@ -15,9 +22,13 @@ function Product(props) {
         </figure>
       </div>
       <div className="col-quantity">
-        <button className="count">-</button>
-        <input type="text" className="product-quantity" value="3" />
-        <button className="count">+</button>
+        <button className="count" onClick={handleRemove}>
+          -
+        </button>
+        <input type="text" className="product-quantity" value={props.count} />
+        <button className="count" onClick={handleAdd}>
+          +
+        </button>
       </div>
       <div className="col-price">
         <span className="product-price">{price}</span>

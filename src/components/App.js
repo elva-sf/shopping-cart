@@ -8,8 +8,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: []
+      products: [],
+      count: 0
     };
+    this.handleRemove = this.handleRemove.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
   }
 
   componentDidMount() {
@@ -19,13 +22,29 @@ class App extends React.Component {
       });
     });
   }
+  //helpers
+  handleRemove(data) {
+    console.log(data);
+    let count = this.state.count;
+    if (count > 0) {
+      this.setState({ count: count - 1 });
+    }
+  }
+  handleAdd(data) {
+    console.log(data);
+    this.setState({ count: this.state.count + 1 });
+  }
 
   render() {
     console.log(this.state);
-
     return (
       <main className="App">
-        <Products products={this.state.products} />
+        <Products
+          products={this.state.products}
+          count={this.state.count}
+          handleRemove={this.handleRemove}
+          handleAdd={this.handleAdd}
+        />
         <Summary />
       </main>
     );
