@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       products: [],
-      count: 0
+      quantity: 0
     };
     this.handleRemove = this.handleRemove.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
@@ -23,16 +23,17 @@ class App extends React.Component {
     });
   }
   //helpers
-  handleRemove(data) {
-    console.log(data);
-    let count = this.state.count;
-    if (count > 0) {
-      this.setState({ count: count - 1 });
-    }
+  handleRemove() {
+    this.setState({
+      quantity: this.state.quantity - 1
+    });
   }
-  handleAdd(data) {
-    console.log(data);
-    this.setState({ count: this.state.count + 1 });
+  handleAdd() {
+    /* let value = this.state.value;
+    this.setState({ [value]: value + 1 }); */
+    this.setState({
+      quantity: this.state.quantity + 1
+    });
   }
 
   render() {
@@ -41,7 +42,7 @@ class App extends React.Component {
       <main className="App">
         <Products
           products={this.state.products}
-          count={this.state.count}
+          quantity={this.state.quantity}
           handleRemove={this.handleRemove}
           handleAdd={this.handleAdd}
         />

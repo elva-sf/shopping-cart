@@ -6,7 +6,8 @@
       "id": "01",
       "image": "shirt.png",
       "price": "20",
-      "currency": "€"
+      "currency": "€",
+      "quantity": 0
     },
     {
       "name": "Mug",
@@ -14,7 +15,8 @@
       "id": "02",
       "image": "mug.png",
       "price": "5",
-      "currency": "€"
+      "currency": "€",
+      "quantity": 0
     },
     {
       "name": "Cap",
@@ -22,7 +24,8 @@
       "id": "03",
       "image": "cap.png",
       "price": "10",
-      "currency": "€"
+      "currency": "€",
+      "quantity": 0
     }
   ]
 }

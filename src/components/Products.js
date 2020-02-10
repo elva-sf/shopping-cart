@@ -2,7 +2,19 @@ import React from "react";
 import Product from "./Product";
 
 function Products(props) {
-  console.log(props);
+  /* console.log(props); */
+  var products = props.products.map(product => {
+    return (
+      <li key={product.id} className="product row">
+        <Product
+          product={product}
+          quantity={props.quantity}
+          handleRemove={props.handleRemove}
+          handleAdd={props.handleAdd}
+        />
+      </li>
+    );
+  });
   return (
     <section className="products">
       <h1 className="main">Shopping cart</h1>
@@ -15,19 +27,19 @@ function Products(props) {
         </li>
       </ul>
       <ul className="products-list">
-        {props.products.map(product => {
+        {products}
+        {/*    {props.products.map(product => {
           return (
-            <li className="product row" key={product.id}>
+            <li key={product.id} className="product row">
               <Product
-                key={product.id}
-                products={product}
-                count={props.count}
+                product={product}
+                value={props.value}
                 handleRemove={props.handleRemove}
                 handleAdd={props.handleAdd}
               />
             </li>
           );
-        })}
+        })} */}
       </ul>
     </section>
   );
