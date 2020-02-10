@@ -3,27 +3,18 @@ import ReactDOM from "react-dom";
 
 class ColQuantity extends React.Component {
   constructor(props) {
-    console.log(props);
+    console.log(props.params);
     super(props);
     this.numberInput = React.createRef();
   }
 
-  handleRemove(ev) {
-    /*  this.handleRemove.current.focus(); */
-    this.props.handleRemove();
-    ev.preventDefault();
+  handleRemove(id) {
+    this.props.handleRemove(id);
   }
-  handleAdd(ev) {
-    /* this.handleAdd.current.focus(); */
-    this.props.handleAdd();
-    ev.preventDefault();
+  handleAdd(id) {
+    this.props.handleAdd(id);
   }
-  /*   focusNumberInput() {
-    ReactDOM.findDOMNode(this.title)
-      .getElementsByTagName("input")[0]
-      .focus();
-    this.focusNumberInput.current.focus()
-  } */
+
   render() {
     const { name, id, quantity } = this.props;
     return (
@@ -31,13 +22,9 @@ class ColQuantity extends React.Component {
         <button
           className="count"
           disabled={quantity < 1}
-          onClick={
-            this.handleRemove.bind(
-              this
-            ) /* this.focusNumberInput.bind(
-              this
-            ) */
-          }
+          onClick={() => {
+            this.handleRemove(id);
+          }}
         >
           -
         </button>
@@ -54,9 +41,9 @@ class ColQuantity extends React.Component {
         />
         <button
           className="count"
-          onClick={
-            this.handleAdd.bind(this) /* this.focusNumberInput.bind(this) */
-          }
+          onClick={() => {
+            this.handleAdd(id);
+          }}
         >
           +
         </button>

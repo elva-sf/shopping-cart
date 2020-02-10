@@ -23,12 +23,14 @@ class App extends React.Component {
     });
   }
   //helpers
-  handleRemove() {
+  handleRemove(id) {
+    console.log(id);
+
     this.setState({
       quantity: this.state.quantity - 1
     });
   }
-  handleAdd() {
+  handleAdd(id) {
     /* let value = this.state.value;
     this.setState({ [value]: value + 1 }); */
     this.setState({
