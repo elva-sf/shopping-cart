@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 class ColQuantity extends React.Component {
   constructor(props) {
-    console.log(props.params);
+    console.log(props.quantity);
     super(props);
     this.numberInput = React.createRef();
   }
@@ -20,11 +20,10 @@ class ColQuantity extends React.Component {
     return (
       <React.Fragment>
         <button
+          id={id}
           className="count"
           disabled={quantity < 1}
-          onClick={() => {
-            this.handleRemove(id);
-          }}
+          onClick={this.handleRemove.bind(this, id)}
         >
           -
         </button>
@@ -40,10 +39,9 @@ class ColQuantity extends React.Component {
           value={quantity}
         />
         <button
+          id={id}
           className="count"
-          onClick={() => {
-            this.handleAdd(id);
-          }}
+          onClick={this.handleAdd.bind(this, id)}
         >
           +
         </button>

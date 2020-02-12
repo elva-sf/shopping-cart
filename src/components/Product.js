@@ -11,6 +11,7 @@ function Product(props) {
       <ColProduct image={image} name={name} code={code} />
       <ColQuantity
         id={id}
+        index={props.index}
         product={props.product}
         name={name}
         quantity={props.quantity}
