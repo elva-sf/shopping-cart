@@ -1,12 +1,18 @@
 import React from "react";
 
 function Summary(props) {
-  console.log(props.products);
-  const { quantity, currency } = props;
+  const { quantity, currency, id, price } = props;
   const total = props.products.reduce(
     (prev, current) => prev + current.price * current.quantity,
     0
   );
+  const mugProduct =
+    props.products[1] !== undefined ? props.products[1] : false;
+  console.log(mugProduct.quantity);
+  let mugDiscount =
+    mugProduct.quantity % 2 === 0 && mugProduct.quantity !== 0
+      ? Math.round(mugProduct.price * mugProduct.quantity * -0.5)
+      : null;
 
   return (
     <aside className="summary">
@@ -25,7 +31,10 @@ function Summary(props) {
         <ul>
           <li>
             <span>2x1 Mug offer</span>
-            <span>-10{currency}</span>
+            <span>
+              {mugDiscount}
+              {currency}
+            </span>
           </li>
           <li>
             <span>x3 Shirt offer</span>

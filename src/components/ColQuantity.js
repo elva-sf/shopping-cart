@@ -26,7 +26,7 @@ class ColQuantity extends React.Component {
         </button>
         <input
           id={id}
-          type="text"
+          type="number"
           name={name}
           className="product-quantity"
           value={quantity}
