@@ -1,10 +1,10 @@
 import React from "react";
 
 function ColTotal(props) {
-  const { currency } = props;
+  const { currency, price, quantity } = props;
   return (
     <div className="col-total">
-      <span className="product-price">60</span>
+      <span className="product-price">{price * quantity}</span>
       <span className="product-currency currency">{currency}</span>
     </div>
   );

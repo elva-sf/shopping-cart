@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 class ColQuantity extends React.Component {
   constructor(props) {
@@ -44,36 +43,5 @@ class ColQuantity extends React.Component {
     );
   }
 }
-/* 
-  renderDetails(id, name) {
-if (this.props[id]) {
-      return (
-        <React.Fragment>
-          <button className="count" onClick={this.handleRemove.bind(this)}>
-            -
-          </button>
-          <input
-            type="number"
-            name={name}
-            className="product-quantity"
-            value={this.props.count}
-          />
-          <button className="count" onClick={this.handleAdd.bind(this)}>
-            +
-          </button>
-        </React.Fragment>
-      );
-    }
-  } */
-
-/*     
-render() {return (
-      <div className="col-quantity">
-        {this.renderDetails("01", "Shirt")}
-    {this.renderDetails("02", "Mug")}
-        {this.renderDetails("03", "Cap:")} 
-      </div>
-    ); 
-  }*/
 
 export default ColQuantity;

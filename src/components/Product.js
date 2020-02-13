@@ -18,7 +18,7 @@ function Product(props) {
         handleAdd={props.handleAdd}
       />
       <ColPrice price={price} currency={currency} />
-      <ColTotal currency={currency} />
+      <ColTotal currency={currency} price={price} quantity={quantity} />
     </React.Fragment>
   );
 }
