@@ -1,14 +1,22 @@
 import React from "react";
 
-function Summary() {
+function Summary(props) {
+  console.log(props.products);
+  const { quantity, currency } = props;
+  const total = props.products.reduce(
+    (prev, current) => prev + current.price * current.quantity,
+    0
+  );
+
   return (
     <aside className="summary">
       <h1 className="main">Order Summary</h1>
       <ul className="summary-items wrapper border">
         <li>
-          <span className="summary-items-number">11 Items</span>
+          <span className="summary-items-number">{quantity} Items</span>
           <span className="summary-items-price">
-            120<span className="currency">€</span>
+            {total}
+            <span className="currency">{currency}</span>
           </span>
         </li>
       </ul>

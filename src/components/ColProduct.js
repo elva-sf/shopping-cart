@@ -1,7 +1,7 @@
 import React from "react";
 
 function ColProduct(props) {
-  const { name, code, image, id } = props;
+  const { name, code, image } = props;
   return (
     <div className="col-product">
       <figure className="product-image">

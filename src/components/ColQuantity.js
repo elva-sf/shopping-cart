@@ -2,7 +2,6 @@ import React from "react";
 
 class ColQuantity extends React.Component {
   constructor(props) {
-    console.log(props.product.quantity);
     super(props);
   }
 

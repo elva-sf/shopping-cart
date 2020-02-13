@@ -1,8 +1,6 @@
 import React from "react";
 
 function ColPrice(props) {
-  console.log(props);
-
   const { price, currency } = props;
   return (
     <div className="col-price">

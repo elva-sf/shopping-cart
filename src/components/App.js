@@ -9,7 +9,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       products: [],
-      quantity: 0
+      quantity: 0,
+      currency: "€"
     };
     this.handleRemove = this.handleRemove.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
@@ -50,12 +51,14 @@ class App extends React.Component {
       <main className="App">
         <Products
           products={this.state.products}
-          /* quantity={this.state.quantity} */
-          tempProduct={this.tempProduct}
           handleRemove={this.handleRemove}
           handleAdd={this.handleAdd}
         />
-        <Summary />
+        <Summary
+          products={this.state.products}
+          quantity={this.state.quantity}
+          currency={this.state.currency}
+        />
       </main>
     );
   }

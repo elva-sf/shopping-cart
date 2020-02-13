@@ -2,18 +2,6 @@ import React from "react";
 import Product from "./Product";
 
 function Products(props) {
-  var products = props.products.map((product, index) => {
-    return (
-      <li key={product.id} className="product row">
-        <Product
-          index={index}
-          product={product}
-          handleRemove={props.handleRemove}
-          handleAdd={props.handleAdd}
-        />
-      </li>
-    );
-  });
   return (
     <section className="products">
       <h1 className="main">Shopping cart</h1>
@@ -26,19 +14,17 @@ function Products(props) {
         </li>
       </ul>
       <ul className="products-list">
-        {products}
-        {/*    {props.products.map(product => {
+        {props.products.map(product => {
           return (
             <li key={product.id} className="product row">
               <Product
                 product={product}
-                value={props.value}
                 handleRemove={props.handleRemove}
                 handleAdd={props.handleAdd}
               />
             </li>
           );
-        })} */}
+        })}
       </ul>
     </section>
   );
