@@ -25,15 +25,15 @@ function Summary(props) {
         <ul>
           <li>
             <span>2x1 Mug offer</span>
-            <span>-10€</span>
+            <span>-10{currency}</span>
           </li>
           <li>
             <span>x3 Shirt offer</span>
-            <span>-3€</span>
+            <span>-3{currency}</span>
           </li>
           <li>
             <span>Promo code</span>
-            <span>0€</span>
+            <span>0{currency}</span>
           </li>
         </ul>
       </div>
@@ -41,7 +41,10 @@ function Summary(props) {
         <ul>
           <li>
             <span className="summary-total-cost">Total cost</span>
-            <span className="summary-total-price">107€</span>
+            <span className="summary-total-price">
+              {total}
+              {currency}
+            </span>
           </li>
         </ul>
         <button type="submit">Checkout</button>
