@@ -2,14 +2,12 @@ import React from "react";
 import Product from "./Product";
 
 function Products(props) {
-  /* console.log(props); */
   var products = props.products.map((product, index) => {
     return (
       <li key={product.id} className="product row">
         <Product
           index={index}
           product={product}
-          quantity={props.quantity}
           handleRemove={props.handleRemove}
           handleAdd={props.handleAdd}
         />

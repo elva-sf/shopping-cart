@@ -24,51 +24,34 @@ class App extends React.Component {
   }
   //helpers
   handleRemove(id) {
+    let tempProduct = [...this.state.products];
+    const selectedProduct = tempProduct.find(item => item.id === id);
+    const index = tempProduct.indexOf(selectedProduct);
+    const product = tempProduct[index];
+    product.quantity = product.quantity - 1;
     this.setState({
-      quantity: this.state.quantity - 1
+      quantity: product.quantity
     });
-    /*     const pos = this.state.products.find(product => product.id === id);
-    if (pos === 1) {
-      this.state.products[0].this.setState({
-        quantity: this.state.products.quantity - 1
-      });
-    } else if (pos === 2) {
-      this.state.products[1].this.setState({
-        quantity: this.state.products.quantity - 1
-      });
-    } else if (pos === 3) {
-      this.state.products[2].this.setState({
-        quantity: this.state.products.quantity - 1
-      });
-    } */
   }
   handleAdd(id) {
+    let tempProduct = [...this.state.products];
+    const selectedProduct = tempProduct.find(item => item.id === id);
+    const index = tempProduct.indexOf(selectedProduct);
+    const product = tempProduct[index];
+    product.quantity = product.quantity + 1;
     this.setState({
-      quantity: this.state.quantity + 1
+      quantity: product.quantity
     });
-    /*  const pos = this.state.products.find(product => product.id === id);
-    if (pos === 1) {
-      this.state.products[0].this.setState({
-        quantity: this.state.products.quantity + 1
-      });
-    } else if (pos === 2) {
-      this.state.products[1].this.setState({
-        quantity: this.state.products.quantity + 1
-      });
-    } else if (pos === 3) {
-      this.state.products[2].this.setState({
-        quantity: this.state.products.quantity + 1
-      });
-    } */
   }
 
   render() {
-    console.log(this.state.products);
+    console.log(this.state);
     return (
       <main className="App">
         <Products
           products={this.state.products}
-          quantity={this.state.quantity}
+          /* quantity={this.state.quantity} */
+          tempProduct={this.tempProduct}
           handleRemove={this.handleRemove}
           handleAdd={this.handleAdd}
         />

@@ -3,9 +3,8 @@ import ReactDOM from "react-dom";
 
 class ColQuantity extends React.Component {
   constructor(props) {
-    console.log(props.quantity);
+    console.log(props.product.quantity);
     super(props);
-    this.numberInput = React.createRef();
   }
 
   handleRemove(id) {
@@ -31,10 +30,6 @@ class ColQuantity extends React.Component {
           id={id}
           type="text"
           name={name}
-          ref={input => {
-            this.title = input;
-          }}
-          /* ref={this.numberInput} */
           className="product-quantity"
           value={quantity}
         />
