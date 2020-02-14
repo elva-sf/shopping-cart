@@ -27,7 +27,7 @@ class App extends React.Component {
     });
   }
 
-  // button functions
+  // button handlers
   handleRemove(id) {
     let tempProduct = [...this.state.products];
     const selectedProduct = tempProduct.find(item => item.id === id);
@@ -59,7 +59,7 @@ class App extends React.Component {
     if (product === undefined) {
       return <h1 className="main">Producto no encontrado</h1>;
     } else {
-      return <ProductDetail product={product} />;
+      return <ProductDetail product={product} handleAdd={this.handleAdd} />;
     }
   }
   render() {
@@ -71,6 +71,7 @@ class App extends React.Component {
               products={this.state.products}
               handleRemove={this.handleRemove}
               handleAdd={this.handleAdd}
+              handleCart={this.handleAdd}
             />
             <Summary
               products={this.state.products}

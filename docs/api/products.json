@@ -6,6 +6,7 @@
       "id": "01",
       "image": "shirt.png",
       "imageDet": "tshirt.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.In sodales semper elit sit amet interdum. Praesent volutpat sed elit vel consectetur. Nulla tempus tincidunt ex, sit amet semper ipsum imperdiet varius. In rutrum aliquam nisl, sagittis faucibus felis bibendum id.",
       "price": 20,
       "currency": "€",
       "quantity": 0
@@ -16,6 +17,7 @@
       "id": "02",
       "image": "mug.png",
       "imageDet": "mug.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.In sodales semper elit sit amet interdum. Praesent volutpat sed elit vel consectetur. Nulla tempus tincidunt ex, sit amet semper ipsum imperdiet varius. In rutrum aliquam nisl, sagittis faucibus felis bibendum id.",
       "price": 5,
       "currency": "€",
       "quantity": 0
@@ -26,6 +28,7 @@
       "id": "03",
       "image": "cap.png",
       "imageDet": "cap.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.In sodales semper elit sit amet interdum. Praesent volutpat sed elit vel consectetur. Nulla tempus tincidunt ex, sit amet semper ipsum imperdiet varius. In rutrum aliquam nisl, sagittis faucibus felis bibendum id.",
       "price": 10,
       "currency": "€",
       "quantity": 0

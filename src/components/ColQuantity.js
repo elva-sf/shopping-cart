@@ -11,6 +11,9 @@ class ColQuantity extends React.Component {
   handleAdd(id) {
     this.props.handleAdd(id);
   }
+  handleCart() {
+    this.props.handleCart();
+  }
 
   render() {
     const { name, id, quantity } = this.props;
