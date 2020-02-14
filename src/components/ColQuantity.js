@@ -4,7 +4,7 @@ class ColQuantity extends React.Component {
   constructor(props) {
     super(props);
   }
-
+  // button functions
   handleRemove(id) {
     this.props.handleRemove(id);
   }

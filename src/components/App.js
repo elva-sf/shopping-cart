@@ -23,7 +23,8 @@ class App extends React.Component {
       });
     });
   }
-  //helpers
+
+  // button functions
   handleRemove(id) {
     let tempProduct = [...this.state.products];
     const selectedProduct = tempProduct.find(item => item.id === id);
@@ -46,8 +47,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state);
-    console.log(this.state.products[1]);
     return (
       <main className="App">
         <Products

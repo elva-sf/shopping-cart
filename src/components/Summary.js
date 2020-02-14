@@ -1,25 +1,41 @@
 import React from "react";
 
 function Summary(props) {
-  const { quantity, currency, id, price } = props;
+  const { currency } = props;
+
+  // products to be discounted
+  const shirtProduct =
+    props.products[0] !== undefined ? props.products[0] : false;
+  const mugProduct =
+    props.products[1] !== undefined ? props.products[1] : false;
+
+  // discounts
+  let mugDiscount =
+    mugProduct.quantity % 2 === 0
+      ? Math.round(mugProduct.price * mugProduct.quantity * -0.5)
+      : mugProduct.price * (mugProduct.quantity - 1) * -0.5;
+  let shirtDiscount =
+    shirtProduct.quantity >= 3
+      ? ((shirtProduct.price * -5) / 100) * shirtProduct.quantity
+      : 0;
+
+  // Sumatories
   const total = props.products.reduce(
     (prev, current) => prev + current.price * current.quantity,
     0
   );
-  const mugProduct =
-    props.products[1] !== undefined ? props.products[1] : false;
-  console.log(mugProduct.quantity);
-  let mugDiscount =
-    mugProduct.quantity % 2 === 0 && mugProduct.quantity !== 0
-      ? Math.round(mugProduct.price * mugProduct.quantity * -0.5)
-      : null;
+  const items = props.products.reduce(
+    (prev, current) => prev + current.quantity,
+    0
+  );
+  const totalWithDiscounts = total + mugDiscount + shirtDiscount;
 
   return (
     <aside className="summary">
       <h1 className="main">Order Summary</h1>
       <ul className="summary-items wrapper border">
         <li>
-          <span className="summary-items-number">{quantity} Items</span>
+          <span className="summary-items-number">{items} Items</span>
           <span className="summary-items-price">
             {total}
             <span className="currency">{currency}</span>
@@ -38,7 +54,10 @@ function Summary(props) {
           </li>
           <li>
             <span>x3 Shirt offer</span>
-            <span>-3{currency}</span>
+            <span>
+              {shirtDiscount}
+              {currency}
+            </span>
           </li>
           <li>
             <span>Promo code</span>
@@ -51,7 +70,7 @@ function Summary(props) {
           <li>
             <span className="summary-total-cost">Total cost</span>
             <span className="summary-total-price">
-              {total}
+              {totalWithDiscounts}
               {currency}
             </span>
           </li>
