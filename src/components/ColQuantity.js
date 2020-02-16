@@ -4,15 +4,12 @@ class ColQuantity extends React.Component {
   constructor(props) {
     super(props);
   }
-  // button functions
+  // handle functions
   handleRemove(id) {
     this.props.handleRemove(id);
   }
   handleAdd(id) {
     this.props.handleAdd(id);
-  }
-  handleCart() {
-    this.props.handleCart();
   }
 
   render() {
@@ -33,6 +30,7 @@ class ColQuantity extends React.Component {
           name={name}
           className="product-quantity"
           value={quantity}
+          readOnly
         />
         <button
           id={id}

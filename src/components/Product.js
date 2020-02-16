@@ -20,7 +20,6 @@ function Product(props) {
         quantity={quantity}
         handleRemove={props.handleRemove}
         handleAdd={props.handleAdd}
-        handleCart={props.handleAdd}
       />
       <ColPrice price={price} currency={currency} />
       <ColTotal currency={currency} price={price} quantity={quantity} />

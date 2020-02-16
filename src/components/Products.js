@@ -21,7 +21,6 @@ function Products(props) {
                 product={product}
                 handleRemove={props.handleRemove}
                 handleAdd={props.handleAdd}
-                handleCart={props.handleAdd}
               />
             </li>
           );

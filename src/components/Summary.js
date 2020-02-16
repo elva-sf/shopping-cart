@@ -3,23 +3,23 @@ import React from "react";
 function Summary(props) {
   const { currency } = props;
 
-  // products to be discounted
+  // products with discount
   const shirtProduct =
     props.products[0] !== undefined ? props.products[0] : false;
   const mugProduct =
     props.products[1] !== undefined ? props.products[1] : false;
 
   // discounts
-  let mugDiscount =
+  const mugDiscount =
     mugProduct.quantity % 2 === 0
       ? Math.round(mugProduct.price * mugProduct.quantity * -0.5)
       : mugProduct.price * (mugProduct.quantity - 1) * -0.5;
-  let shirtDiscount =
+  const shirtDiscount =
     shirtProduct.quantity >= 3
       ? ((shirtProduct.price * -5) / 100) * shirtProduct.quantity
       : 0;
 
-  // Sumatories
+  // sumatories
   const total = props.products.reduce(
     (prev, current) => prev + current.price * current.quantity,
     0

@@ -11,7 +11,6 @@ class App extends React.Component {
     super(props);
     this.state = {
       products: [],
-      quantity: 0,
       currency: "€"
     };
     this.handleRemove = this.handleRemove.bind(this);
@@ -27,7 +26,7 @@ class App extends React.Component {
     });
   }
 
-  // button handlers
+  // handle functions
   handleRemove(id) {
     let tempProduct = [...this.state.products];
     const selectedProduct = tempProduct.find(item => item.id === id);
@@ -49,17 +48,21 @@ class App extends React.Component {
     });
   }
 
-  // render
+  // renders
   renderProductDetail(props) {
-    console.log(props.match.params.id);
     const routeId = props.match.params.id;
     const product = this.state.products.find(item => item.id === routeId);
-    console.log(product);
 
     if (product === undefined) {
       return <h1 className="main">Producto no encontrado</h1>;
     } else {
-      return <ProductDetail product={product} handleAdd={this.handleAdd} />;
+      return (
+        <ProductDetail
+          product={product}
+          handleAdd={this.handleAdd}
+          quantity={product.quantity}
+        />
+      );
     }
   }
   render() {
@@ -71,7 +74,6 @@ class App extends React.Component {
               products={this.state.products}
               handleRemove={this.handleRemove}
               handleAdd={this.handleAdd}
-              handleCart={this.handleAdd}
             />
             <Summary
               products={this.state.products}
