@@ -1,48 +1,32 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-class ColQuantity extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  // handle functions
-  handleRemove(id) {
-    this.props.handleRemove(id);
-  }
-  handleAdd(id) {
-    this.props.handleAdd(id);
-  }
+function ColQuantity(props) {
+  const { name, id, quantity } = props;
 
-  render() {
-    const { name, id, quantity } = this.props;
-    return (
-      <React.Fragment>
-        <button
-          id={id}
-          className="count"
-          disabled={quantity < 1}
-          onClick={this.handleRemove.bind(this, id)}
-        >
-          -
-        </button>
-        <input
-          id={id}
-          type="number"
-          name={name}
-          className="product-quantity"
-          value={quantity}
-          readOnly
-        />
-        <button
-          id={id}
-          className="count"
-          onClick={this.handleAdd.bind(this, id)}
-        >
-          +
-        </button>
-      </React.Fragment>
-    );
-  }
+  return (
+    <React.Fragment>
+      <button
+        id={id}
+        className="count"
+        disabled={quantity < 1}
+        onClick={() => props.handleRemove(id)}
+      >
+        -
+      </button>
+      <input
+        id={id}
+        type="number"
+        name={name}
+        className="product-quantity"
+        value={quantity}
+        readOnly
+      />
+      <button id={id} className="count" onClick={() => props.handleAdd(id)}>
+        +
+      </button>
+    </React.Fragment>
+  );
 }
 
 // propTypes
