@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function ProductDetail(props) {
   console.log(props);
@@ -77,5 +78,19 @@ function ProductDetail(props) {
     </React.Fragment>
   );
 }
+
+// propTypes
+ProductDetail.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    code: PropTypes.string.isRequired,
+    imageDet: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired
+  }).isRequired,
+  handleAdd: PropTypes.func.isRequired
+};
 
 export default ProductDetail;

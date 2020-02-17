@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class ColQuantity extends React.Component {
   constructor(props) {
@@ -43,5 +44,14 @@ class ColQuantity extends React.Component {
     );
   }
 }
+
+// propTypes
+ColQuantity.propTypes = {
+  name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
+  handleRemove: PropTypes.func.isRequired,
+  handleAdd: PropTypes.func.isRequired
+};
 
 export default ColQuantity;

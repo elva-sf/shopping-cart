@@ -5,6 +5,7 @@ import Summary from "./Summary";
 import ProductDetail from "./ProductDetail";
 import apiProducts from "../services/products.js";
 import { Route, Switch } from "react-router-dom";
+import PropTypes from "prop-types";
 
 class App extends React.Component {
   constructor(props) {
@@ -87,5 +88,14 @@ class App extends React.Component {
     );
   }
 }
+
+// propTypes
+App.propTypes = {
+  products: PropTypes.array,
+  currency: PropTypes.string,
+  handleRemove: PropTypes.func,
+  handleAdd: PropTypes.func,
+  renderProductDetail: PropTypes.func
+};
 
 export default App;

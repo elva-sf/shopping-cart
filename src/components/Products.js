@@ -1,5 +1,6 @@
 import React from "react";
 import Product from "./Product";
+import PropTypes from "prop-types";
 
 function Products(props) {
   return (
@@ -29,5 +30,12 @@ function Products(props) {
     </section>
   );
 }
+
+// propTypes
+Products.propTypes = {
+  products: PropTypes.array.isRequired,
+  handleRemove: PropTypes.func.isRequired,
+  handleAdd: PropTypes.func.isRequired
+};
 
 export default Products;

@@ -1,13 +1,12 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function Summary(props) {
-  const { currency } = props;
+  const { products, currency } = props;
 
   // products with discount
-  const shirtProduct =
-    props.products[0] !== undefined ? props.products[0] : false;
-  const mugProduct =
-    props.products[1] !== undefined ? props.products[1] : false;
+  const shirtProduct = products[0] !== undefined ? products[0] : false;
+  const mugProduct = products[1] !== undefined ? products[1] : false;
 
   // discounts
   const mugDiscount =
@@ -20,14 +19,11 @@ function Summary(props) {
       : 0;
 
   // sumatories
-  const total = props.products.reduce(
+  const total = products.reduce(
     (prev, current) => prev + current.price * current.quantity,
     0
   );
-  const items = props.products.reduce(
-    (prev, current) => prev + current.quantity,
-    0
-  );
+  const items = products.reduce((prev, current) => prev + current.quantity, 0);
   const totalWithDiscounts = total + mugDiscount + shirtDiscount;
 
   return (
@@ -80,5 +76,11 @@ function Summary(props) {
     </aside>
   );
 }
+
+// propTypes
+Summary.propTypes = {
+  products: PropTypes.array.isRequired,
+  currency: PropTypes.string.isRequired
+};
 
 export default Summary;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function ColProduct(props) {
   const { name, code, image } = props;
@@ -14,5 +15,12 @@ function ColProduct(props) {
     </div>
   );
 }
+
+// propTypes
+ColProduct.propTypes = {
+  name: PropTypes.string.isRequired,
+  code: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired
+};
 
 export default ColProduct;

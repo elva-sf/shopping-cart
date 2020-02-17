@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function ColPrice(props) {
   const { price, currency } = props;
@@ -9,5 +10,11 @@ function ColPrice(props) {
     </div>
   );
 }
+
+// propTypes
+ColPrice.propTypes = {
+  price: PropTypes.number.isRequired,
+  currency: PropTypes.string.isRequired
+};
 
 export default ColPrice;
