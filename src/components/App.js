@@ -1,5 +1,5 @@
 import React from "react";
-import "../stylesheet/App.css";
+import "../stylesheet/index.css";
 import Products from "./Products";
 import Summary from "./Summary";
 import ProductDetail from "./ProductDetail";

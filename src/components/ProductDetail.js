@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 function ProductDetail(props) {
-  console.log(props);
   const {
     name,
     price,
