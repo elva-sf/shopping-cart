@@ -2,13 +2,13 @@
 
 Migración de código HTML y CSS a React, implementando la lógica necesaria para hacer una lista de la compra funcional.
 
-Las herramientas utilizadas son:
+Herramientas utilizadas:
 **HTML5 | CSS | React | API fetch | Git&Github**
 
 "Initial implementation of the store with vanilla html and css":
 ![Example image](./example.png?raw=true)
 
-La web consiste básicamente en una **página principal** con dos apartados:
+Basicamente, esta web consiste en una **página principal** con dos apartados:
 
 - **Shopping cart**: donde aparecen 4 columnas con un pequeño detalle de los productos, un contador de la cantidad, precio y precio total de cada producto.
 - **Order Summary**: donde se muestra el número total de artículos que se han añadido y el precio total, además de los distintos descuentos que se activan ó desactivan según se cumplan las condiciones, y el coste total de la compra aplicandose los descuentos.
@@ -26,7 +26,7 @@ La **estructura de carpetas** de src se divide en:
 - services: contiene un fichero para realizar el API fetch.
 - stylesheet: contiene el fichero index.css heredado.
 
-Además, en la carpeta public, se ha incorporado una carpeta api para **crear una API** mediante un **fichero JSON** (products.json) que contiene un array "products", que a su vez contiene objetos con la información de cada pruducto: "name", "code", "id","image", "imageDet","description", "price", "currency" y "quantity".
+Además, en la carpeta public, se ha incorporado una carpeta api para **crear una API** mediante un **fichero JSON** (products.json) que contiene un array "products", que a su vez contiene objetos con la información de cada producto: "name", "code", "id","image", "imageDet","description", "price", "currency" y "quantity".
 
 ##Para acceder a la página web, entrar en: https://elva-sf.github.io/shopping-cart/
 
@@ -86,10 +86,10 @@ Mencionar que me he servido de los recursos que he podido utilizar de la carpeta
 
 Promoción de tazas implementada.
 
-Para ello, accedí al producto "Mug" en el componente Summatory.js y realicé un cálculo ayudandome de un condicional y guardandolo en una constante, para luego sumarlo al total.
+Para ello, accedí al producto "Mug" en el componente Summatory.js y realicé un cálculo ayudandome de un condicional y guardándolo en una constante, para luego sumarlo al total.
 
 - **"bulk discounts: buying 3 or more of `TSHIRT` product, the price of that product is reduced 5%. E.g., if you buy 3 or more `TSHIRT` items, the price per unit should be 19.00€"**:
 
 Promoción de camisetas implementada.
 
-Para ello, accedí al producto "Shirt" en el componente Summatory.js y realicé un cálculo ayudandome de un condicional y guardandolo en una constante, para luego sumarlo al total.
+Para ello, accedí al producto "Shirt" en el componente Summatory.js y realicé un cálculo ayudandome de un condicional y guardándolo en una constante, para luego sumarlo al total.

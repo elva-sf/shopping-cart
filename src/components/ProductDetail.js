@@ -12,7 +12,6 @@ function ProductDetail(props) {
     id,
     description
   } = props.product;
-
   return (
     <React.Fragment>
       <main

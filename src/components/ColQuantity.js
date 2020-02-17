@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 function ColQuantity(props) {
   const { name, id, quantity } = props;
-
   return (
     <React.Fragment>
       <button
