@@ -14,7 +14,7 @@ La web consiste básicamente en una **página principal** con dos apartados:
 - **Order Summary**: donde se muestra el número total de artículos que se han añadido y el precio total, además de los distintos descuentos que se activan ó desactivan según se cumplan las condiciones, y el coste total de la compra aplicandose los descuentos.
 
 Además de la página principal, hay añadida una ruta que permite navegar a una **página con el detalle del producto** seleccionado, donde además de nombre, precio y codigo, se muestra una descripción y una imagen ampliada de dicho producto.
-Esta página también cuenta con un botón para volver a la página pricipal, y otro botón para añadir el producto al carro de la compra y al mismo tiempo volver a la página principal.
+Esta página también cuenta con un botón para volver a la página principal, y otro botón para añadir el producto al carro de la compra y al mismo tiempo volver a la página principal.
 
 ##Sección "Detalle de Producto":
 ![Maqueta ordenador](src/img/imgProductDetail.png)
